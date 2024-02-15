@@ -1,11 +1,5 @@
 [
   {
-    "id": "AeHIrLTr6JkxGE6SN-0Rw",
-    "name": "Allen Raymond",
-    "email": "nulla.ante@vestibul.co.uk",
-    "phone": "(992) 914-3792"
-  },
-  {
     "id": "qdggE76Jtbfd9eWJHrssH",
     "name": "Chaim Lewis",
     "email": "dui.in@egetlacus.ca",
@@ -60,9 +54,9 @@
     "phone": "(748) 206-2688"
   },
   {
-    "id": "539b0666f975223bfc0455939cb6dde1"
-  },
-  {
-    "id": "4e6fbe8c12e44d5c9a43ec5d2ec7df65"
+    "id": "a481e4a1b3b53c34d2278c79003e94b1",
+    "name": "Kyrylo",
+    "email": "hey@gmail.com",
+    "phone": "+380123456789"
   }
 ]

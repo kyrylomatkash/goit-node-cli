@@ -40,7 +40,7 @@ async function removeContact(id) {
 
     const [result] = getAll.splice(index, 1);
     await fs.writeFile(contactsPath, JSON.stringify(getAll, null, 2));
-
+    console.log(`Contact with ID ${id} has been successfully removed.`);
     return result;
   } catch (error) {
     throw new Error("Error removing contact: " + error.message);

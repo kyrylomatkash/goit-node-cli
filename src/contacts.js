@@ -20,15 +20,22 @@ async function getContactById(id) {
 }
 
 async function addContact(contactInfo) {
-  const getAll = await listContacts();
-  const randomId = randomBytes(16).toString("hex");
-  const newContact = { id: randomId, ...contactInfo };
-  getAll.push(newContact);
+  try {
+    const getAll = await listContacts();
+    const randomId = randomBytes(16).toString("hex");
+    const newContact = { id: randomId, ...contactInfo };
+    getAll.push(newContact);
 
-  await fs.writeFile(contactsPath, JSON.stringify(getAll, null, 2));
-  return newContact;
+    await fs.writeFile(contactsPath, JSON.stringify(getAll, null, 2));
+
+    console.log(`Contact added successfully. ID: ${newContact.id}`);
+
+    return newContact;
+  } catch (error) {
+    console.error("Error adding contact:", error.message);
+    throw new Error("Error adding contact: " + error.message);
+  }
 }
-
 async function removeContact(id) {
   try {
     const getAll = await listContacts();

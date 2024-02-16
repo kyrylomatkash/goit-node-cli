@@ -16,7 +16,7 @@ async function listContacts() {
 async function getContactById(id) {
   const contacts = await listContacts();
   const contact = contacts.find((contact) => contact.id === id);
-  return contact;
+  return contact || null;
 }
 
 async function addContact(contactInfo) {
@@ -35,7 +35,7 @@ async function removeContact(id) {
     const index = getAll.findIndex((item) => item.id === id);
 
     if (index === -1) {
-      throw new Error("Contact not found");
+      return null;
     }
 
     const [result] = getAll.splice(index, 1);
